@@ -1,0 +1,94 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body {                                
+    overflow: hidden;
+    position: fixed;
+    width:100%;
+    height:100%;
+    background: url("../images/produceBg.png");
+    background-size:cover;
+    background-position:center;
+}   
+
+.photos{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 2.133333rem;
+    width: 9.24rem;
+    height: 6.013333rem;
+    background: url("../images/photoWall.png");
+    background-size:cover;
+    background-position:center;
+}
+
+.photoList{
+    float: left;
+    width: 33.33%;
+    height: 100%;
+}
+
+.photoItem{
+    margin: 0 auto;
+    margin-top: 0.426667rem;
+    width: 70%;
+    height: 1.446667rem;
+    box-sizing: border-box;
+    border: 3px dashed #e3bf8d;
+    border-radius: 10%;
+    background-color: #fffdf8;
+}
+
+.photoItem img{
+    display: block;
+    border-radius: 10%;
+    margin: 0 auto;
+    width: 96%;
+    height: 98%;
+}
+
+.myPhoto{
+    border: 3px dashed #6dac79;
+}
+
+.stamp{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 0.466667rem;
+    width: 9.24rem;
+    height: 4.973333rem;
+    background: url("../images/stamp.png");
+    background-size:cover;
+    background-position:center;
+}
+
+.toName{
+    position: absolute;
+    display: inline-block;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    left: 1.933333rem;
+    top: 0.866667rem;
+    color: #e77c6e;
+    font-size: 0.48rem;
+}
+
+.headPic{
+    position: absolute;
+    top: 0.866667rem;
+    left: 7.4rem;
+    height: 0.666667rem;
+    width: 0.666667rem;
+    border-radius: 50%;
+}
+
+.sentence{
+    margin: 0 auto;
+    padding-top: 1.613333rem;
+    width: 7.066667rem;
+    text-indent: 2em;
+    color: #968671;
+    font-size: 0.41rem;
+}

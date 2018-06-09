@@ -2,9 +2,37 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>2018@毕业纪念册</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/init.css">
 </head>
 <body>
-    111
+    <div class="container">
+        <div class="photo">
+            <img class='inputBg' src="../images/inputBg.png">
+            <div class="nameinput">
+                <input id='username' class='inputword' type="text" placeholder="请输入你的名字" name="username" >
+            </div>
+            <div class="photoinput">
+                <div class="cameraContainer">    
+                    <img class="camera" src="../images/camera.png">
+                    <input id='camera_image' type="file" name="image" accept="image/*" capture="camera" >
+                </div>
+                <div class="add">
+                    <span class="addPhoto">
+                        添加照片
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="produce">
+            <a href="./produce">
+                <img class="produceButton" src="../images/produce.png">
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript" src='../javascripts/lib/jquery-3.2.1.min.js'></script>
+    <script type="text/javascript" src="../javascripts/lib/flexible.js"></script>
+    <script type="text/javascript" src='../javascripts/dist/bundle.js'></script>
 </body>
 </html>
