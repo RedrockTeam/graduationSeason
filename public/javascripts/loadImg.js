@@ -46,7 +46,8 @@ export default function loadImg(event) {
         function callback() {
             var data = compress(img);
             localStorage.setItem('img', data);
-            var name = localStorage.getItem('name');
+            var name = localStorage.getItem('username');
+            console.log(name);
             $.ajax({
                 url: 'http://n5vssq.natappfree.cc/u/upload',
                 type: 'POST',
