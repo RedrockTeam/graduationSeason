@@ -1,16 +1,15 @@
 import compress from './compress.js';
 
 export default function loadImg(event) {
+    if(localStorage.getItem('username') == undefined){
+        alert('请先输入名字');
+        return;
+    }
     // 获取当前选中的文件
     const file = event.target.files[0];
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext('2d');
-    //    瓦片canvas
-    const tCanvas = document.createElement("canvas");
-    const tctx = tCanvas.getContext("2d");
-    const maxsize = 10 * 1024 * 1024;
+    const maxsize = 10000 * 1024;
+    const uploadmax = 100 * 1024;
     console.log(file);
-
     // 检查文件类型
     if (['jpeg', 'png', 'gif', 'jpg'].indexOf(file.type.split("/")[1]) < 0) {
         alert("文件格式不对");
@@ -32,7 +31,7 @@ export default function loadImg(event) {
         $('.cameraContainer').hide();
         $('.add').hide();
         //如果图片大小小于100kb，则直接上传
-        if (result.length <= maxsize) {
+        if (result.length <= uploadmax) {
             img = null;
             localStorage.setItem('img', result);
             return;
@@ -47,6 +46,24 @@ export default function loadImg(event) {
         function callback() {
             var data = compress(img);
             localStorage.setItem('img', data);
+            var name = localStorage.getItem('name');
+            $.ajax({
+                url: 'http://n5vssq.natappfree.cc/u/upload',
+                type: 'POST',
+                data: {
+                    b64f : data,
+                    name: name
+                }
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
             img = null;
         }
     };

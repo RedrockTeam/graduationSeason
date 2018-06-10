@@ -9,5 +9,5 @@ import loadUsername from './loadUsername.js'
 // window.loadImg = loadImg;
 // window.loadUsername = loadUsername;
 
-document.getElementById('camera_image').addEventListener('change', loadImg)
 document.getElementById('username').addEventListener('change', loadUsername)
+document.getElementById('camera_image').addEventListener('change', loadImg)

@@ -33,6 +33,13 @@
     </div>
     <script type="text/javascript" src='../javascripts/lib/jquery-3.2.1.min.js'></script>
     <script type="text/javascript" src="../javascripts/lib/flexible.js"></script>
-    <script type="text/javascript" src='../javascripts/dist/bundle.js'></script>
+    <script type="text/javascript">
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext('2d');
+            //    瓦片canvas
+        var tCanvas = document.createElement("canvas");
+        var tctx = tCanvas.getContext("2d");
+    </script>
+    <script type="text/javascript" src='../javascripts/dist/main.js'></script>
 </body>
 </html>
