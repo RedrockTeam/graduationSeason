@@ -26,9 +26,17 @@ body {
 
 .photoList{
     float: left;
-    width: 33.33%;
+    width: 30%;
     height: 100%;
 }
+.photoList:first-child{
+    margin-left: 0.433333rem;
+}
+
+.photoList:last-child{
+    margin-right: 0.433333rem;
+}
+
 
 .photoItem{
     margin: 0 auto;

@@ -9,7 +9,17 @@
 </head>
 
 <body>
+    <div class="black">
+        <div class="membersContainer">
+            <div class="close"></div>
+            <img class="membersItem" src="./images/members.png" alt="">
+        </div>
+    </div>
     <div class="container">
+        
+        <div class="members">
+            <img class= "member" src="./images/member.png">
+        </div>
         <div class="photo">
             <img class='inputBg' src="./images/inputBg.png">
             <div class="nameinput">
@@ -37,6 +47,13 @@
     <script type="text/javascript" src="./javascripts/lib/flexible.js"></script>
     <script type="text/javascript">
     
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext('2d');
+        //    瓦片canvas
+        var tCanvas = document.createElement("canvas");
+        var tctx = tCanvas.getContext("2d");
+        var input = document.getElementById("username");
+        input.scrollIntoViewIfNeeded();
 
 
     </script>
