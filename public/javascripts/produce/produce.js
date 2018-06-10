@@ -77,7 +77,6 @@ function setMyimg() {
     $(node).attr({
         src: imgurl
     })
-    console.log(node);
     $('.myPhoto').append(node);
 }
 
@@ -108,7 +107,6 @@ function setImg() {
         $(node).attr({
             src: './images/' + arr[key] + '.png'
         });
-        console.log(key);
         $('.photoItem')[key].append(node);
     })
     $('.myPhoto').find('img').remove();

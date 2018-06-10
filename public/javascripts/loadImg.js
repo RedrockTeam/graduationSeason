@@ -9,7 +9,6 @@ export default function loadImg(event) {
     const file = event.target.files[0];
     const maxsize = 10000 * 1024;
     const uploadmax = 100 * 1024;
-    console.log(file);
     // 检查文件类型
     if (['jpeg', 'png', 'gif', 'jpg'].indexOf(file.type.split("/")[1]) < 0) {
         alert("文件格式不对");
@@ -47,7 +46,6 @@ export default function loadImg(event) {
             var data = compress(img);
             localStorage.setItem('img', data);
             var name = localStorage.getItem('username');
-            console.log(name);
             $.ajax({
                 url: 'http://n5vssq.natappfree.cc/u/upload',
                 type: 'POST',

@@ -13,7 +13,7 @@ input.scrollIntoViewIfNeeded();
 
 
 function getUserinfo() {
-    var myUrl = '';
+    var myUrl = encodeURI('https://wx.idsbllp.cn/nodejs/graduationSeason/');
     var apiUrl = 'https://wx.idsbllp.cn/MagicLoop/index.php?s=/addon/Api/Api/oauth&redirect=';
     var nickname;
     var headimgurl;
@@ -41,11 +41,6 @@ function getQueryString(name) {
 
 
 
-// console.log('loadsuccess');
-// console.log(loadImg);
-
-// window.loadImg = loadImg;
-// window.loadUsername = loadUsername;
 window.onload = getUserinfo();
 document.getElementById('username').addEventListener('change', loadUsername)
 document.getElementById('camera_image').addEventListener('change', loadImg)
