@@ -106,7 +106,7 @@ function setImg() {
     $.each(arr, function(key, value) {
         var node = document.createElement('img');
         $(node).attr({
-            src: '../images/' + arr[key] + '.png'
+            src: './images/' + arr[key] + '.png'
         });
         console.log(key);
         $('.photoItem')[key].append(node);
