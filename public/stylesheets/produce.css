@@ -26,22 +26,20 @@ body {
 
 .photoList{
     float: left;
-    width: 30%;
+    width: 33%;
     height: 100%;
 }
-.photoList:first-child{
-    margin-left: 0.433333rem;
-}
 
-.photoList:last-child{
-    margin-right: 0.433333rem;
+.ulContainer{
+    width: 90%;
+    margin: 0 auto;
 }
 
 
 .photoItem{
     margin: 0 auto;
     margin-top: 0.426667rem;
-    width: 70%;
+    width: 80%;
     height: 1.446667rem;
     box-sizing: border-box;
     border: 3px dashed #e3bf8d;
@@ -78,7 +76,7 @@ body {
     height: 0.6rem;
     line-height: 0.6rem;
     left: 1.933333rem;
-    top: 0.866667rem;
+    top: 0.936667rem;
     color: #e77c6e;
     font-size: 0.48rem;
 }
