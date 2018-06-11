@@ -115,6 +115,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
+    color: #cbbaa1;
 }
 
 .produce{
@@ -135,9 +136,9 @@ body {
 }
 
 .members{
-    float: right;
-    margin-right: 0.3rem;
-    margin-top: 0.3rem;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.3rem;
     width: 0.633333rem;
     height: 0.633333rem;
 }
