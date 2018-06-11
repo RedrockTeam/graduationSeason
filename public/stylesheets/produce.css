@@ -100,3 +100,16 @@ body {
     color: #968671;
     font-size: 0.41rem;
 }
+
+.code{
+    width: 100%;
+    height: 100%;
+}
+
+.codeContainer{
+    position: absolute;
+    width: 2.52rem;
+    height: 1.893333rem;
+    bottom: 0.396667rem;
+    right: 0.266667rem;
+}
