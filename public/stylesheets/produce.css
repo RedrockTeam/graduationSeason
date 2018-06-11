@@ -48,7 +48,7 @@ body {
     width: 80%;
     height: 1.446667rem;
     box-sizing: border-box;
-    border: 3px dashed #e3bf8d;
+    border: 0.04rem dashed #e3bf8d;
     border-radius: 10%;
     background-color: #fffdf8;
 }

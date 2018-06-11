@@ -55,7 +55,9 @@
         var input = document.getElementById("username");
         input.scrollIntoViewIfNeeded();
 
-
+        $(document).ready(function () {  
+        $('body').css({'width':$(window).width(),'height':$(window).height()});  
+    });  
     </script>
     <script type="text/javascript" src='./javascripts/dist/main.js'></script>
     <script>
