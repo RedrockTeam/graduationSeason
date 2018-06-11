@@ -11,7 +11,8 @@ function dti() {
             $('.container').append(img);
             $(img).css({
                 position: 'absolute',
-                top: '0'
+                top: '0',
+                opacity: '0'
             });
         });
 }
