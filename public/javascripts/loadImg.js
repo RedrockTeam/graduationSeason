@@ -6,7 +6,7 @@ export default function loadImg(event) {
         alert('请先输入名字');
         return;
     }
-    var Orientation;
+    var Orientation = 3;
     // 获取当前选中的文件
     const file = event.target.files[0];
     const maxsize = 10000 * 1024;
@@ -24,10 +24,10 @@ export default function loadImg(event) {
     if (!this.files.length) return;
     var reader = new FileReader();
     var size = file.size / 1024 > 1024 ? (~~(10 * file.size / 1024 / 1024)) / 10 + "MB" : ~~(file.size / 1024) + "KB";
-    EXIF.getData(file, function() { /*获取图片方向信息*/
-        Orientation = EXIF.getTag(this, 'Orientation') || '';
-        console.log(Orientation)
-    });
+    // EXIF.getData(file, function() { /*获取图片方向信息*/
+    //     Orientation = EXIF.getTag(this, 'Orientation') || '';
+    //     console.log(Orientation)
+    // });
     reader.onload = function() {
         var result = this.result;
         var img = new Image();
@@ -36,9 +36,9 @@ export default function loadImg(event) {
         if (Orientation === 3 || Orientation === 6 || Orientation === 8) {
             // console.log(Orientation)
             getImgData(result, Orientation, function(rotateData) { /*7.15*/
-                    // console.log(rotateData === result) false
-                    // console.log(rotateData === data) false
-                    $('.photoinput').css("background-image", "url(" + result + ")");
+                    // console.log(rotateData === result)
+                    // console.log(rotateData === data)
+                    $('.photoinput').css("background-image", "url(" + rotateData + ")");
                     $('.cameraContainer').hide();
                     $('.add').hide();
                 })
@@ -76,7 +76,7 @@ export default function loadImg(event) {
                         }
                     })
                     .done(function() {
-                        console.log(data);
+                        console.log("success");
                     })
                     .fail(function() {
                         console.log("error");
