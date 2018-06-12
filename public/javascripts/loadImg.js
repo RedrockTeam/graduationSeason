@@ -31,6 +31,7 @@ export default function loadImg(event) {
     reader.onload = function() {
         var result = this.result;
         var img = new Image();
+        img.src = result;
 
         if (Orientation === 3 || Orientation === 6 || Orientation === 8) {
             // console.log(Orientation)
@@ -56,11 +57,7 @@ export default function loadImg(event) {
                 return;
             }
             //      图片加载完毕之后进行压缩，然后上传
-            if (img.complete) {
-                callback();
-            } else {
-                img.onload = callback;
-            }
+            
 
             function callback() {
                 var data = compress(img);
