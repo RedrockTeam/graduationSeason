@@ -24,10 +24,10 @@ export default function loadImg(event) {
     if (!this.files.length) return;
     var reader = new FileReader();
     var size = file.size / 1024 > 1024 ? (~~(10 * file.size / 1024 / 1024)) / 10 + "MB" : ~~(file.size / 1024) + "KB";
-    // EXIF.getData(file, function() { /*获取图片方向信息*/
-    //     Orientation = EXIF.getTag(this, 'Orientation') || '';
-    //     console.log(Orientation)
-    // });
+    EXIF.getData(file, function() { /*获取图片方向信息*/
+        Orientation = EXIF.getTag(this, 'Orientation') || '';
+        console.log(Orientation)
+    });
     reader.onload = function() {
         var result = this.result;
         var img = new Image();
