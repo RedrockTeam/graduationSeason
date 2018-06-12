@@ -29,7 +29,8 @@ function getUserinfo() {
         url: 'https://wx.idsbllp.cn/graduate/c/getsinfo/ ',
         type: 'POST',
     })
-    .done(function() {
+    .done(function(data) {
+        console.log(data);
         localStorage.setItem('headimgurl',data.headimgurl);
         localStorage.setItem('nickname',data.nickname);
     })
