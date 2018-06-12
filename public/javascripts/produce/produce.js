@@ -57,6 +57,8 @@ var words = [{
     word: '就算没有备好三餐等你的中心食堂，也不要忘记准点吃饭。就算没有聚餐圣地堕落街，也不要和我断了联系。'
 }, {
     word: '告别图书馆的香氛书页，也不要停止汲取知识的芬芳。邮子们，望一愿名成就，不负流年逝！'
+}, {
+    word: '即将远行的邮子，这些年母校见证了你从稚嫩到成熟的蜕变。愿你谨记校训，为梦起航！'
 }]
 
 
@@ -72,14 +74,14 @@ function setToname() {
     $('.toName').text(name);
 }
 
-// function setheadimg(){
-//     var headimgurl = localStorage.getItem("headimgurl");
-//     var node = document.createElement('img');
-//     $(node).attr({
-//         src: headimgurl
-//     })
-//     $('.headPic').append(node);
-// }
+function setheadimg(){
+    var headimgurl = localStorage.getItem("headimgurl");
+    var node = document.createElement('img');
+    $(node).attr({
+        src: headimgurl
+    })
+    $('.headPic').append(node);
+}
 
 function setMyimg() {
     var node = document.createElement('img');
@@ -105,7 +107,7 @@ function random(num, len) {
 }
 
 function setSentence() {
-    var num = random(19, 1)[0];
+    var num = random(23, 1)[0];
     var word = words[num].word;
     $('.sentence').text(word);
 }
@@ -126,7 +128,7 @@ function setImg() {
 
 window.onload = check();
 window.onload = setToname();
-// window.onload = setheadimg();
+window.onload = setheadimg();
 window.onload = setImg();
 window.onload = setMyimg();
 window.onload = setSentence();
