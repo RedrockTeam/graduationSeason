@@ -37,7 +37,7 @@ export default function loadImg(event) {
             // console.log(Orientation)
             getImgData(result, Orientation, function(rotateData) { /*7.15*/
                     console.log(rotateData == result)
-                    img.src = rotateData;
+                    img.src = result;
                     $('.photoinput').css("background-image", "url(" + rotateData + ")");
                     $('.cameraContainer').hide();
                     $('.add').hide();
@@ -57,7 +57,11 @@ export default function loadImg(event) {
                 return;
             }
             //      图片加载完毕之后进行压缩，然后上传
-            
+            if (img.complete) {
+                callback();
+            } else {
+                img.onload = callback;
+            }
 
             function callback() {
                 var data = compress(img);
