@@ -18,11 +18,11 @@ function dti() {
 }
 
 var words = [{
-    word: '时光荏苒，我和你的故事停留在栀子花开的那一天，你总说毕业遥遥无期，但转眼就各奔东西。'
+    word: '时光荏苒，今年的栀子花又来了！毕业遥遥无期，眼就各奔东西。'
 }, {
-    word: '虽学子变成校友，但挥手是告别也是启程，愿此去繁花似锦，再相逢依旧如故。'
+    word: '学子即将成校友！愿此去繁花似锦，归来仍是邮子。'
 }, {
-    word: '愿走过天梯的你，无畏泥泞，征服星辰大海。'
+    word: '愿走过天梯的你，无畏泥泞，扬帆星辰大海！'
 }, {
     word: '告别八教的凌霄，却终怀凌云志。'
 }, {
@@ -38,17 +38,17 @@ var words = [{
 }, {
     word: '莘莘学子，母校见证了你们从稚嫩走向成熟的蜕变，愿你们谨记校训，前程似锦，带着梦想扬帆起航。'
 }, {
-    word: '修德，品德和人格是我们行走社会准则，毕业只是修行路上的一个节点。'
+    word: '修德。德性是行走社会的准则。毕业，其实你的人生才刚刚开始。'
 }, {
-    word: '博学，校园之外是更广阔的书山学海，坚持不懈地汲取才能博学明理。'
+    word: '博学。校园之外是更广阔的书山学海，坚持不懈地汲取才能博学明理。'
 }, {
-    word: '求实，纯真岁月渐行渐远，求实之路道阻且长。'
+    word: '求实，纯真岁月渐行渐远，求实之路道阻且长。即将远行的邮子们，加油！'
 }, {
-    word: '创新，远走高飞时，请带着你对追梦的领悟和创新的追求。'
+    word: '创新。展翅高飞时，请带上追梦的初心和创新的执着。'
 }, {
     word: '热情，过去的四年是学术的积淀，是热情的蓄力，不忘初心，砥砺前行。'
 }, {
-    word: '吻过暖春的落樱，以金秋银杏作伴，寒东腊梅为友，我们走过四季。故事于酷夏栀子绽放结局，没有未完待续。'
+    word: '吻过暖春的落樱，以金秋银杏作伴。春华秋实，我们的故事未完待续。'
 }, {
     word: '没有雨红莲上的欢声笑语，你也要笑对未来；没有情人坡上的柔情蜜意，你也过得甜蜜蜜。'
 }, {
@@ -70,6 +70,15 @@ function check() {
 function setToname() {
     var name = localStorage.getItem("username");
     $('.toName').text(name);
+}
+
+function setheadimg(){
+    var headimgurl = localStorage.getItem("headimgurl");
+    var node = document.createElement('img');
+    $(node).attr({
+        src: headimgurl
+    })
+    $('.headPic').append(node);
 }
 
 function setMyimg() {
@@ -117,6 +126,7 @@ function setImg() {
 
 window.onload = check();
 window.onload = setToname();
+window.onload = setheadimg();
 window.onload = setImg();
 window.onload = setMyimg();
 window.onload = setSentence();

@@ -46,23 +46,23 @@ export default function loadImg(event) {
             var data = compress(img);
             localStorage.setItem('img', data);
             var name = localStorage.getItem('username');
-            // $.ajax({
-            //     url: 'http://n5vssq.natappfree.cc/u/upload',
-            //     type: 'POST',
-            //     data: {
-            //         b64f : data,
-            //         name: name
-            //     }
-            // })
-            // .done(function() {
-            //     console.log("success");
-            // })
-            // .fail(function() {
-            //     console.log("error");
-            // })
-            // .always(function() {
-            //     console.log("complete");
-            // });
+            $.ajax({
+                url: 'https://wx.idsbllp.cn/graduate/u/upload/',
+                type: 'POST',
+                data: {
+                    b64f : data,
+                    name: name
+                }
+            })
+            .done(function() {
+                console.log("data");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
             img = null;
         }
     };

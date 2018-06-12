@@ -84,29 +84,39 @@ body {
 }
 
 .toName{
-    position: absolute;
     display: inline-block;
-    height: 0.6rem;
-    line-height: 0.6rem;
-    left: 1.933333rem;
-    top: 0.936667rem;
+    height: 0.7rem;
+    float: left;
     color: #e77c6e;
     font-size: 0.48rem;
     font-family: myfont;
 }
 
 .headPic{
-    position: absolute;
-    top: 0.866667rem;
-    left: 7.4rem;
-    height: 0.666667rem;
-    width: 0.666667rem;
+    float: left;
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
     border-radius: 50%;
+    margin-left: 0.333333rem;
+    overflow: hidden;
+}
+
+.userinfo{
+    width: 60%;
+    height: 0.7rem;
+    margin: 0 auto;
+    padding-top: 0.906667rem;
+}
+
+.headPic img{
+    width: 100%;
+    height: 100%;
 }
 
 .sentence{
+    padding-top: 0.166667rem;
     margin: 0 auto;
-    padding-top: 1.613333rem;
     width: 7.066667rem;
     text-indent: 2em;
     color: #968671;

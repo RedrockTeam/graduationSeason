@@ -26,23 +26,25 @@ $('.close').click(function(event) {
 
 
 
-// function getUserinfo() {
-//     var myUrl = encodeURI('https://wx.idsbllp.cn/nodejs/graduationSeason/');
-//     var apiUrl = 'https://wx.idsbllp.cn/MagicLoop/index.php?s=/addon/Api/Api/oauth&redirect=';
-//     var nickname;
-//     var headimgurl;
-//     if((localStorage.getItem('nickname') == undefined) && (localStorage.getItem('headimgurl') == undefined)){
-//         window.location = apiUrl + myUrl;
-//         nickname = getQueryString(nickname);
-//         headimgurl = getQueryString(headimgurl);
-//         localStorage.setItem('nickname', nickname);
-//         localStorage.setItem('headimgurl', headimgurl);
-//     } else {
-//         nickname = localStorage.getItem('nickname');
-//         headimgurl = localStorage.getItem('headimgurl');
-//     }
+function getUserinfo() {
+    $.ajax({
+        url: 'https://wx.idsbllp.cn/graduate/c/getsinfo/ ',
+        type: 'POST',
+        data: null,
+    })
+    .done(function() {
+        console.log(data);
+        localStorage.setItem('headimgurl',data.headimgurl);
+        localStorage.setItem('nickname',data.nickname);
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
     
-// }
+}
 
 // function getQueryString(name) {
 //     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
@@ -55,6 +57,6 @@ $('.close').click(function(event) {
 
 
 
-// window.onload = getUserinfo();
+window.onload = getUserinfo();
 document.getElementById('username').addEventListener('change', loadUsername)
 document.getElementById('camera_image').addEventListener('change', loadImg)
