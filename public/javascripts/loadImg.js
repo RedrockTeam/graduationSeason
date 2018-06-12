@@ -6,7 +6,7 @@ export default function loadImg(event) {
         alert('请先输入名字');
         return;
     }
-    var Orientation = 3;
+    var Orientation;
     // 获取当前选中的文件
     const file = event.target.files[0];
     const maxsize = 10000 * 1024;
@@ -36,8 +36,7 @@ export default function loadImg(event) {
         if (Orientation === 3 || Orientation === 6 || Orientation === 8) {
             // console.log(Orientation)
             getImgData(result, Orientation, function(rotateData) { /*7.15*/
-                    // console.log(rotateData === result)
-                    // console.log(rotateData === data)
+                    console.log(rotateData == result)
                     $('.photoinput').css("background-image", "url(" + rotateData + ")");
                     $('.cameraContainer').hide();
                     $('.add').hide();
