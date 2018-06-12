@@ -1,4 +1,5 @@
 import compress from './compress.js';
+import getImgData from './getImgData.js';
 
 export default function loadImg(event) {
     if (localStorage.getItem('username') == undefined) {
@@ -31,45 +32,60 @@ export default function loadImg(event) {
         var result = this.result;
         var img = new Image();
         img.src = result;
-        $('.photoinput').css("background-image", "url(" + result + ")");
-        $('.cameraContainer').hide();
-        $('.add').hide();
-        //如果图片大小小于100kb，则直接上传
-        if (result.length <= uploadmax) {
-            img = null;
-            localStorage.setItem('img', result);
-            return;
-        }
-        //      图片加载完毕之后进行压缩，然后上传
-        if (img.complete) {
-            callback();
-        } else {
-            img.onload = callback;
-        }
 
-        function callback() {
-            var data = compress(img);
-            localStorage.setItem('img', data);
-            var name = localStorage.getItem('username');
-            $.ajax({
-                    url: 'https://wx.idsbllp.cn/graduate/u/upload/',
-                    type: 'POST',
-                    data: {
-                        b64f: data,
-                        name: name
-                    }
+        if (Orientation === 3 || Orientation === 6 || Orientation === 8) {
+            // console.log(Orientation)
+            getImgData(result, Orientation, function(rotateData) { /*7.15*/
+                    // console.log(rotateData === result) false
+                    // console.log(rotateData === data) false
+                    $('.photoinput').css("background-image", "url(" + result + ")");
+                    $('.cameraContainer').hide();
+                    $('.add').hide();
                 })
-                .done(function() {
-                    console.log(data);
-                })
-                .fail(function() {
-                    console.log("error");
-                })
-                .always(function() {
-                    console.log("complete");
-                });
-            img = null;
-        }
-    };
-    reader.readAsDataURL(file);
-}
+            }
+            if (Orientation === '' || Orientation === 1) {
+                $('.photoinput').css("background-image", "url(" + result + ")");
+                $('.cameraContainer').hide();
+                $('.add').hide();
+            }
+
+
+            //如果图片大小小于100kb，则直接上传
+            if (result.length <= uploadmax) {
+                img = null;
+                localStorage.setItem('img', result);
+                return;
+            }
+            //      图片加载完毕之后进行压缩，然后上传
+            if (img.complete) {
+                callback();
+            } else {
+                img.onload = callback;
+            }
+
+            function callback() {
+                var data = compress(img);
+                localStorage.setItem('img', data);
+                var name = localStorage.getItem('username');
+                $.ajax({
+                        url: 'https://wx.idsbllp.cn/graduate/u/upload/',
+                        type: 'POST',
+                        data: {
+                            b64f: data,
+                            name: name
+                        }
+                    })
+                    .done(function() {
+                        console.log(data);
+                    })
+                    .fail(function() {
+                        console.log("error");
+                    })
+                    .always(function() {
+                        console.log("complete");
+                    });
+                img = null;
+            }
+        };
+        reader.readAsDataURL(file);
+    }
