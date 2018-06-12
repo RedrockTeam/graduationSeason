@@ -1,10 +1,11 @@
 import compress from './compress.js';
 
 export default function loadImg(event) {
-    if(localStorage.getItem('username') == undefined){
+    if (localStorage.getItem('username') == undefined) {
         alert('请先输入名字');
         return;
     }
+    var Orientation;
     // 获取当前选中的文件
     const file = event.target.files[0];
     const maxsize = 10000 * 1024;
@@ -22,6 +23,10 @@ export default function loadImg(event) {
     if (!this.files.length) return;
     var reader = new FileReader();
     var size = file.size / 1024 > 1024 ? (~~(10 * file.size / 1024 / 1024)) / 10 + "MB" : ~~(file.size / 1024) + "KB";
+    EXIF.getData(file, function() { /*获取图片方向信息*/
+        Orientation = EXIF.getTag(this, 'Orientation') || '';
+        console.log(Orientation)
+    });
     reader.onload = function() {
         var result = this.result;
         var img = new Image();
@@ -47,22 +52,22 @@ export default function loadImg(event) {
             localStorage.setItem('img', data);
             var name = localStorage.getItem('username');
             $.ajax({
-                url: 'https://wx.idsbllp.cn/graduate/u/upload/',
-                type: 'POST',
-                data: {
-                    b64f : data,
-                    name: name
-                }
-            })
-            .done(function() {
-                console.log("data");
-            })
-            .fail(function() {
-                console.log("error");
-            })
-            .always(function() {
-                console.log("complete");
-            });
+                    url: 'https://wx.idsbllp.cn/graduate/u/upload/',
+                    type: 'POST',
+                    data: {
+                        b64f: data,
+                        name: name
+                    }
+                })
+                .done(function() {
+                    console.log(data);
+                })
+                .fail(function() {
+                    console.log("error");
+                })
+                .always(function() {
+                    console.log("complete");
+                });
             img = null;
         }
     };

@@ -72,14 +72,14 @@ function setToname() {
     $('.toName').text(name);
 }
 
-function setheadimg(){
-    var headimgurl = localStorage.getItem("headimgurl");
-    var node = document.createElement('img');
-    $(node).attr({
-        src: headimgurl
-    })
-    $('.headPic').append(node);
-}
+// function setheadimg(){
+//     var headimgurl = localStorage.getItem("headimgurl");
+//     var node = document.createElement('img');
+//     $(node).attr({
+//         src: headimgurl
+//     })
+//     $('.headPic').append(node);
+// }
 
 function setMyimg() {
     var node = document.createElement('img');
@@ -126,7 +126,7 @@ function setImg() {
 
 window.onload = check();
 window.onload = setToname();
-window.onload = setheadimg();
+// window.onload = setheadimg();
 window.onload = setImg();
 window.onload = setMyimg();
 window.onload = setSentence();
