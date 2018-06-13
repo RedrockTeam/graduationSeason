@@ -107,7 +107,7 @@ function random(num, len) {
 }
 
 function setSentence() {
-    var num = random(23, 1)[0];
+    var num = random(20, 1)[0];
     var word = words[num].word;
     $('.sentence').text(word);
 }
