@@ -52,8 +52,8 @@ export default function loadImg(event) {
 
         //如果图片大小小于100kb，则直接上传
         if (result.length <= uploadmax) {
-            img = null;
             localStorage.setItem('img', result);
+            img = null;
             return;
         }
         //      图片加载完毕之后进行压缩，然后上传
@@ -64,6 +64,7 @@ export default function loadImg(event) {
         }
 
         function callback() {
+            console.log(img);
             var data = compress(img);
             localStorage.setItem('img', data);
             var name = localStorage.getItem('username');

@@ -134,4 +134,8 @@ $(document).ready(function(){
 })
 
 
-window.onload = dti();
+window.onload = function(){
+    setInterval(function(){
+        dti();
+    },10000)
+};
