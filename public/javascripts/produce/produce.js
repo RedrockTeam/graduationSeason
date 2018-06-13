@@ -2,9 +2,10 @@ import domtoimage from 'dom-to-image';
 import compress from '../compress';
 
 function dti() {
-    var node = document.querySelector('body');
+    var node = document.querySelector('html');
     domtoimage.toPng(node)
         .then(function(dataUrl) {
+            console.log(7);
             var nimg = new Image();
             nimg.src = dataUrl;
             $('.container').append(nimg);
@@ -13,6 +14,9 @@ function dti() {
                 top: '0',
                 opacity: '0'
             });
+        })
+        .catch(function(error) {
+            console.error('oops, something went wrong!', error);
         });
 }
 
@@ -62,6 +66,7 @@ var words = [{
 
 
 function check() {
+    console.log(1)
     if ((localStorage.getItem('username') == undefined) || (localStorage.getItem('img') == undefined)) {
         alert('请完善信息');
         $(location).attr('href', '/')
@@ -69,11 +74,13 @@ function check() {
 }
 
 function setToname() {
+    console.log(2)
     var name = localStorage.getItem("username");
     $('.toName').text(name);
 }
 
-function setheadimg(){
+function setheadimg() {
+    console.log(3)
     var headimgurl = localStorage.getItem("headimgurl");
     var node = document.createElement('img');
     $(node).attr({
@@ -83,6 +90,7 @@ function setheadimg(){
 }
 
 function setMyimg() {
+    console.log(5)
     var node = document.createElement('img');
     var imgurl = localStorage.getItem("img");
     $(node).attr({
@@ -106,12 +114,14 @@ function random(num, len) {
 }
 
 function setSentence() {
+    console.log(6)
     var num = random(20, 1)[0];
     var word = words[num].word;
     $('.sentence').text(word);
 }
 
 function setImg() {
+    console.log(4)
     var arr = random(19, 9);
     $.each(arr, function(key, value) {
         var node = document.createElement('img');
@@ -124,7 +134,7 @@ function setImg() {
 
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
     check();
     setToname();
     setheadimg();
@@ -133,9 +143,4 @@ $(document).ready(function(){
     setSentence();
 })
 
-
-window.onload = function(){
-    setInterval(function(){
-        dti();
-    },10000)
-};
+dti();
