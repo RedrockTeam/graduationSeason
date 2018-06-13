@@ -37,10 +37,10 @@ export default function loadImg(event) {
             // console.log(Orientation)
             getImgData(result, Orientation, function(rotateData) { /*7.15*/
                 console.log(rotateData == result)
-                img.src = rotateData;
                 $('.photoinput').css("background-image", "url(" + rotateData + ")");
                 $('.cameraContainer').hide();
                 $('.add').hide();
+                img.src = rotateData;
             })
         } else{
             $('.photoinput').css("background-image", "url(" + result + ")");
