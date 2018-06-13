@@ -5,11 +5,11 @@ function dti() {
     var node = document.querySelector('body');
     domtoimage.toPng(node)
         .then(function(dataUrl) {
-            var img = new Image();
-            var name = localStorage.getItem('name');
-            img.src = dataUrl;
-            $('.container').append(img);
-            $(img).css({
+            var nimg = new Image();
+            nimg.src = dataUrl;
+            console.log(nimg);
+            $('.container').append(nimg);
+            $(nimg).css({
                 position: 'absolute',
                 top: '0',
                 opacity: '0'
@@ -125,11 +125,20 @@ function setImg() {
 
 }
 
+$(document).ready(function(){
+    check();
+    setToname();
+    setheadimg();
+    setImg();
+    setMyimg();
+    setSentence();
+})
 
-window.onload = check();
-window.onload = setToname();
-window.onload = setheadimg();
-window.onload = setImg();
-window.onload = setMyimg();
-window.onload = setSentence();
+
+// window.onload = check();
+// window.onload = setToname();
+// window.onload = setheadimg();
+// window.onload = setImg();
+// window.onload = setMyimg();
+// window.onload = setSentence();
 window.onload = dti();
