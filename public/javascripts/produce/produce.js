@@ -7,7 +7,6 @@ function dti() {
         .then(function(dataUrl) {
             var nimg = new Image();
             nimg.src = dataUrl;
-            console.log(nimg);
             $('.container').append(nimg);
             $(nimg).css({
                 position: 'absolute',
@@ -135,10 +134,4 @@ $(document).ready(function(){
 })
 
 
-// window.onload = check();
-// window.onload = setToname();
-// window.onload = setheadimg();
-// window.onload = setImg();
-// window.onload = setMyimg();
-// window.onload = setSentence();
 window.onload = dti();

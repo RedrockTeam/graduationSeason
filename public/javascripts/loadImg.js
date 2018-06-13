@@ -42,12 +42,12 @@ export default function loadImg(event) {
                 $('.cameraContainer').hide();
                 $('.add').hide();
             })
-        }
-        if (Orientation === '' || Orientation === 1 || Orientation == undefined) {
+        } else{
             $('.photoinput').css("background-image", "url(" + result + ")");
             $('.cameraContainer').hide();
             $('.add').hide();
         }
+       
 
 
         //如果图片大小小于100kb，则直接上传
