@@ -43,7 +43,7 @@ export default function loadImg(event) {
                 $('.add').hide();
             })
         }
-        if (Orientation === '' || Orientation === 1) {
+        if (Orientation === '' || Orientation === 1 || Orientation == undefined) {
             $('.photoinput').css("background-image", "url(" + result + ")");
             $('.cameraContainer').hide();
             $('.add').hide();
