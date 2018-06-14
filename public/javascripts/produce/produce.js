@@ -143,4 +143,4 @@ $(document).ready(function() {
     setSentence();
 })
 
-dti();
+window.onload = setTimeout(dti, 5000);
