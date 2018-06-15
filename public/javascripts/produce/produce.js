@@ -136,11 +136,11 @@ function setImg() {
 
 $(document).ready(function() {
     check();
-    setToname();
     setheadimg();
+    setToname();
     setImg();
     setMyimg();
     setSentence();
 })
 
-window.onload = setTimeout(dti, 5000);
+window.setTimeout(dti, 5000);

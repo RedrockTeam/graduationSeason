@@ -44,6 +44,6 @@ function getUserinfo() {
 }
 
 
-window.onload = getUserinfo();
+getUserinfo();
 document.getElementById('username').addEventListener('change', loadUsername)
 document.getElementById('camera_image').addEventListener('change', loadImg)
