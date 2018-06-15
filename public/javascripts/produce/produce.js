@@ -64,6 +64,13 @@ var words = [{
     word: '即将远行的邮子，这些年母校见证了你从稚嫩到成熟的蜕变。愿你谨记校训，为梦起航！'
 }]
 
+function setheadimg() {
+    console.log(3)
+    var headimgurl = localStorage.getItem("headimgurl");
+    $('headPicture').attr({
+        src: headimgurl
+    })
+}
 
 function check() {
     console.log(1)
@@ -79,15 +86,6 @@ function setToname() {
     $('.toName').text(name);
 }
 
-function setheadimg() {
-    console.log(3)
-    var headimgurl = localStorage.getItem("headimgurl");
-    var node = document.createElement('img');
-    $(node).attr({
-        src: headimgurl
-    })
-    $('.headPic').append(node);
-}
 
 function setMyimg() {
     console.log(5)
@@ -135,8 +133,8 @@ function setImg() {
 }
 
 $(document).ready(function() {
-    check();
     setheadimg();
+    check();
     setToname();
     setImg();
     setMyimg();
