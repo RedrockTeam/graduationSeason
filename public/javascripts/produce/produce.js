@@ -141,4 +141,4 @@ $(document).ready(function() {
     setSentence();
 })
 
-window.setTimeout(dti, 1000);
+window.setTimeout(dti, 10000);
