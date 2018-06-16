@@ -13,7 +13,8 @@ function dti() {
             position: 'absolute',
             top: '0',
             width: '100%',
-            height: '100%'
+            height: '100%',
+            opacity: '0'
         });
     })
 }
@@ -139,4 +140,4 @@ $(document).ready(function() {
     setSentence();
 })
 
-window.onload = setTimeout(dti, 5000);
+window.onload = dti;
