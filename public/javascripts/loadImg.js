@@ -7,7 +7,7 @@ export default function loadImg(event) {
         return;
     }
     var Orientation;
-    // 获取当前选中的文件
+    
     const file = event.target.files[0];
     const maxsize = 10000 * 1024;
     const uploadmax = 100 * 1024;
@@ -26,13 +26,12 @@ export default function loadImg(event) {
     var size = file.size / 1024 > 1024 ? (~~(10 * file.size / 1024 / 1024)) / 10 + "MB" : ~~(file.size / 1024) + "KB";
     EXIF.getData(file, function() { /*获取图片方向信息*/
         Orientation = EXIF.getTag(this, 'Orientation') || '';
-        console.log(Orientation)
     });
+
     reader.onload = function() {
         var result = this.result;
         var img = new Image();
         img.src = result;
-
         if (Orientation === 3 || Orientation === 6 || Orientation === 8) {
             // console.log(Orientation)
             getImgData(result, Orientation, function(rotateData) { /*7.15*/
@@ -42,13 +41,11 @@ export default function loadImg(event) {
                 $('.add').hide();
                 img.src = rotateData;
             })
-        } else{
+        } else {
             $('.photoinput').css("background-image", "url(" + result + ")");
             $('.cameraContainer').hide();
             $('.add').hide();
         }
-       
-
 
         //如果图片大小小于100kb，则直接上传
         if (result.length <= uploadmax) {
@@ -64,8 +61,14 @@ export default function loadImg(event) {
         }
 
         function callback() {
-            console.log(img);
             var data = compress(img);
+            var imgWidth = img.width;
+            var imgHeight = img.height;
+
+            
+
+            console.log(imgWidth);
+            console.log(imgHeight);
             localStorage.setItem('img', data);
             var name = localStorage.getItem('username');
             $.ajax({

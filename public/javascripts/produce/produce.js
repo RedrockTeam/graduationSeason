@@ -1,23 +1,21 @@
 import domtoimage from 'dom-to-image';
 import compress from '../compress';
+import html2canvas from 'html2canvas';
 
 function dti() {
     var node = document.querySelector('html');
-    domtoimage.toPng(node)
-        .then(function(dataUrl) {
-            console.log(7);
-            var nimg = new Image();
-            nimg.src = dataUrl;
-            $('.container').append(nimg);
-            $(nimg).css({
-                position: 'absolute',
-                top: '0',
-                opacity: '0'
-            });
-        })
-        .catch(function(error) {
-            console.error('oops, something went wrong!', error);
+    html2canvas(node).then(canvas => {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");　
+        console.log(image)　
+        document.body.appendChild(image);
+        $(image).css({
+            position: 'absolute',
+            top: '0',
+            width: '100%',
+            height: '100%'
         });
+    })
 }
 
 var words = [{
