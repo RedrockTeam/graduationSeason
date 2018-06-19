@@ -158,13 +158,18 @@ body {
 
 .font {
     position: absolute;
+    width: 24vw;
+    height: 5vh;
     left: 10vw;
     bottom: 0;
+    background: url('../images/font.jpg');
 }
 
 .qr {
     position: absolute;
+    width: 40vw;
+    height: 12vh;
     right: 10vw;
     bottom: 0;
-    
+    background: url('../images/qr.jpg');
 }
