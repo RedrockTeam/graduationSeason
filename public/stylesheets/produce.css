@@ -153,6 +153,18 @@ body {
 .footer {
     margin-top: 4vh;
     height: 14vh;
-    background: url('../images/qr.jpg') no-repeat;
-    background-size: cover;
+    position: relative;
+}
+
+.font {
+    position: absolute;
+    left: 10vw;
+    bottom: 0;
+}
+
+.qr {
+    position: absolute;
+    right: 10vw;
+    bottom: 0;
+    
 }
