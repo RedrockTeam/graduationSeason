@@ -152,6 +152,7 @@ body {
 
 .footer {
     margin-top: 4vh;
-    height: 16vh;
-    background: pink;
+    height: 14vh;
+    background: url('../images/qr.jpg') no-repeat;
+    background-size: cover;
 }
