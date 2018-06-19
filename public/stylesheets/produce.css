@@ -13,7 +13,7 @@ body {
     position: fixed;
     width:100%;
     height:100%;
-    background: url("../images/produceBackground.png");
+    background: url("../images/produceBackground.jpg");
     background-size:cover;
     background-position:center;
 }   
@@ -147,4 +147,11 @@ body {
     height: 1.893333rem;
     bottom: 0.396667rem;
     right: 0.266667rem;
+}
+
+
+.footer {
+    margin-top: 4vh;
+    height: 16vh;
+    background: pink;
 }
